@@ -4,6 +4,7 @@ setStructure.add('2014');
 setStructure.add(45.89);
 setStructure.add(true);
 setStructure.add(5000);
+setStructure.add('Commit');
 
 console.log(setStructure);
 console.log(setStructure.entries());
