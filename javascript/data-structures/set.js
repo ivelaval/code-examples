@@ -5,6 +5,7 @@ setStructure.add(45.89);
 setStructure.add(true);
 setStructure.add(5000);
 setStructure.add('Commit');
+setStructure.add('2014 world caup');
 
 console.log(setStructure);
 console.log(setStructure.entries());
