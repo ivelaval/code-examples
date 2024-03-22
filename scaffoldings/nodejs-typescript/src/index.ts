@@ -1,11 +1,10 @@
+import "dotenv/config";
 import express from "express"
-import * as dotevnv from "dotenv"
 import cors from "cors"
 import helmet from "helmet"
 import morgan from "morgan";
 import bodyParser from "body-parser";
-
-dotevnv.config()
+import { dynamicRoutes } from "./routes/index.js";
 
 if (!process.env.PORT) {
     console.log(`No port value specified...`)
@@ -22,8 +21,10 @@ app.use(cors())
 app.use(helmet())
 app.use(morgan('dev'));
 
-app.get('/', (req, res) => {
-    res.send('Hello World!');
+app.use(dynamicRoutes);
+
+app.get('/ping', (req, res) => {
+    res.send('pong!');
 });
 
 app.listen(PORT, () => {

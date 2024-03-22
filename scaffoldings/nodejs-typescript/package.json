@@ -4,7 +4,11 @@
   "description": "",
   "main": "build/index.js",
   "scripts": {
-    "start": "node build/index.js",
+    "start": "pnpm build && node build/index.js",
+    "dev": "pnpm run \"/dev:/\"",
+    "nodemon": "nodemon",
+    "dev:tsc": "tsc --watch --preserveWatchOutput",
+    "dev:node": "node --enable-source-maps --watch build/index.js",
     "build": "rm -rf build && tsc"
   },
   "keywords": [],
@@ -19,7 +23,6 @@
     "helmet": "^7.1.0",
     "http-status-codes": "^2.3.0",
     "morgan": "^1.10.0",
-    "ts-node": "^10.9.2",
     "uuid": "^9.0.1"
   },
   "devDependencies": {
@@ -30,7 +33,7 @@
     "@types/morgan": "^1.9.9",
     "@types/node": "^20.11.27",
     "@types/uuid": "^9.0.8",
-    "nodemon": "^3.1.0",
+    "ts-node": "^10.9.2",
     "typescript": "^5.4.2"
   }
 }
